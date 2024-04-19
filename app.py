@@ -8,8 +8,7 @@ CORS(app)
 def user_data():
     data = request.get_json()
 
-    print("######################### I MADE A CHANGE!!!")
-    print(data)
+    print("data received:", data)
     return jsonify({"received_data": data})
 
 if __name__ == '__main__':
