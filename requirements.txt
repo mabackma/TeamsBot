@@ -2,3 +2,5 @@ flask
 flask-cors
 Flask-SQLAlchemy
 mysqlclient
+python-dotenv
+mysql-connector-python
