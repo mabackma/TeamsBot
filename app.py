@@ -20,8 +20,7 @@ azure_mysql_port = 3306
 azure_mysql_database = os.getenv("AZURE_MYSQL_DATABASE")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://mabackma:bbbbbbbb1!@teamsbot-mysql-server.mysql.database.azure.com:3306/teamsbotdatabase'
-#app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+mysqlconnector://{azure_mysql_username}:{azure_mysql_password}@{azure_mysql_host}:{azure_mysql_port}/{azure_mysql_database}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+mysqlconnector://{azure_mysql_username}:{azure_mysql_password}@{azure_mysql_host}:{azure_mysql_port}/{azure_mysql_database}'
 CORS(app)
 db.init_app(app)
 
