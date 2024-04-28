@@ -9,7 +9,6 @@ from models.answer import Answer
 from models.question import Question
 from models.satisfactionsurvey import SatisfactionSurvey
 from extensions import db
-import mysql.connector
 
 
 load_dotenv()
