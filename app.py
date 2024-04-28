@@ -24,6 +24,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+mysqlconnector://{azure_mysql_us
 CORS(app)
 db.init_app(app)
 
+print("Teams Bot Server Started")
+
 
 @app.route('/user_data', methods=['GET'])
 def get_user_data():
