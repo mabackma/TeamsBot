@@ -42,6 +42,8 @@ def post_user_data():
     department_id = None
     if department_name:
         department_id = add_department(department_name)
+    else:
+        department_id = add_department('Ei osastoa')
 
     # Create employee for the department
     employee_id = add_employee(department_id)
