@@ -9,6 +9,7 @@ from models.answer import Answer
 from models.question import Question
 from models.satisfactionsurvey import SatisfactionSurvey
 from extensions import db
+from query_database import fetch_data
 
 
 load_dotenv()
@@ -30,6 +31,16 @@ print("####################################### Teams Bot Server Started!")
 def get_user_data():
     print("getting data from database...")
     return jsonify({"received_data": "Data retrieved from database"})
+
+
+@app.route('/query_data', methods=['POST'])
+def get_query_data():
+    data = request.get_json()
+    sql_query = data.get('query')
+    print("################# received:", sql_query)
+
+    columns, values = fetch_data(sql_query)
+    return jsonify({"columns": columns, "values": values})
 
 
 @app.route('/user_data', methods=['POST'])
@@ -128,6 +139,7 @@ def add_answer(ans_type, ans, q_id, emp_id):
     db.session.add(new_answer)
     db.session.commit()
     return new_answer
+
 
 if __name__ == '__main__':
     app.run(debug=True)
