@@ -29,8 +29,8 @@ print("####################################### Teams Bot Server Started!")
 
 @app.route('/user_data', methods=['GET'])
 def get_user_data():
-    print("getting data from database...")
-    return jsonify({"received_data": "Data retrieved from database"})
+    print("user_data endpoint!")
+    return jsonify({"received_data": "you sent a GET request to user_data endpoint!"})
 
 
 @app.route('/query_data', methods=['POST'])
