@@ -1,6 +1,6 @@
 # Teams Bot
 
-A Microsoft Teams satisfaction survey for employees in.
+A Microsoft Teams satisfaction survey for employees.
 
 The questions are sent from Power Automate to Teams. 
 
